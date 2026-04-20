@@ -164,41 +164,51 @@ declare module 'astro:content' {
 	type DataEntryMap = {
 		"blog": Record<string, {
   id: string;
-  body?: string;
+  render(): Render[".md"];
+  slug: string;
+  body: string;
   collection: "blog";
-  data: any;
+  data: InferEntrySchema<"blog">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
 "design": Record<string, {
   id: string;
-  body?: string;
+  render(): Render[".md"];
+  slug: string;
+  body: string;
   collection: "design";
-  data: any;
+  data: InferEntrySchema<"design">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
 "gallery": Record<string, {
   id: string;
-  body?: string;
+  render(): Render[".md"];
+  slug: string;
+  body: string;
   collection: "gallery";
-  data: any;
+  data: InferEntrySchema<"gallery">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
 "travels": Record<string, {
   id: string;
-  body?: string;
+  render(): Render[".md"];
+  slug: string;
+  body: string;
   collection: "travels";
-  data: any;
+  data: InferEntrySchema<"travels">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
 "writings": Record<string, {
   id: string;
-  body?: string;
+  render(): Render[".md"];
+  slug: string;
+  body: string;
   collection: "writings";
-  data: any;
+  data: InferEntrySchema<"writings">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -234,6 +244,6 @@ declare module 'astro:content' {
 		LiveContentConfig['collections'][C]['loader']
 	>;
 
-	export type ContentConfig = typeof import("./../src/content.config.mjs");
+	export type ContentConfig = typeof import("./../src/content/config.js");
 	export type LiveContentConfig = never;
 }

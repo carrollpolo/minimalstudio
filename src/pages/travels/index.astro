@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import { formatDate } from "@/utils/format";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Card from "@/components/entries/Card.astro";
-import CardCover from "@/components/entries/CardCover.astro";
+import CoverPlus from "@/components/entries/CoverPlus.astro";
 
 const allBlogPosts = await getCollection('travels');
 allBlogPosts.sort((a, b) => Date.parse(b.data.date) - Date.parse(a.data.date));
@@ -52,7 +52,10 @@ const featuredPosts = allBlogPosts.filter(({ data }) => data.featured);
         <div class="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 w-full max-w-7xl px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 { allBlogPosts.slice(0, 3).map((post) => 
-                  <CardCover title={post.data.title} description={post.data.description} date={post.data.date} href={post.slug} photos={post.data.photos} category="travels" />
+                  <a href={"/travels/" + post.slug}>
+                    <CoverPlus photos={post.data.photos} title={post.data.title} ratio="4/3" />
+                    <h3 class="mt-4 text-lg font-semibold text-white">{post.data.title}</h3>
+                  </a>
                 )}
 
             </div>
@@ -65,7 +68,7 @@ const featuredPosts = allBlogPosts.filter(({ data }) => data.featured);
 
         <div class="px-8 pb-8 max-w-7xl mx-auto grid gap-6 grid-cols-1 md:grid-cols-3">
           {allBlogPosts.slice(3).map((post: any) => 
-            <Card title={post.data.title} description={post.data.description} date={post.data.date} href={post.slug} photos={post.data.photos} category="travels" />
+            <Card post={post} category="travels" />
           )}
         </div>
     </section>

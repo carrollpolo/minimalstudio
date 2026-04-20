@@ -60,6 +60,8 @@ const posts = visibleEntries.slice(0, perPage);
     </div>
   </section>
 
+  <hr class="w-full mt-24 md:mt-36 border-text-default/20" />
+
   <section class="max-w-7xl mx-auto mt-12 px-8">
     <div>
       <div class="mt-12 grid grid-cols-12 gap-8 place-content-between">
@@ -68,7 +70,7 @@ const posts = visibleEntries.slice(0, perPage);
         ))}
       </div>
 
-      <Pagination collection="design" page={page} totalPages={totalPages} />
+      <Pagination collection="gallery" page={page} totalPages={totalPages} />
     </div>
   </section>
 </BaseLayout>

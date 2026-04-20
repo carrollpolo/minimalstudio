@@ -1,9 +1,9 @@
 export const config = {
   // === Basic configuration ===
   /** Title for your website. Will be used in metadata and as browser tab title. */
-  title: 'Kaero Zhi',
+  title: 'Carrolldeo',
   /** Will be used in index page & copyright declaration */
-  author: 'Kaero Zhi',
+  author: 'Carrolldeo',
   /** Description metadata for your website. Can be used in page metadata. */
   slogan: 'Flaming in the dark.',
   description: '摄影师 / 短片导演 / 视觉设计师，定居苏州，活动范围覆盖长三角，擅长人像、活动拍摄。',
