@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { slugify } from '@/utils/slugify';
-import DesignPost from '@/components/entries/DesignPost.astro';
+import GalleryPost from '@/components/entries/GalleryPost.astro';
 
 const { collection, slug } = Astro.props;
 
@@ -31,7 +31,7 @@ const relatedPosts = allPosts
       {relatedPosts.map(post => {
         const cover = post.data.photos?.[0] || null;
         return (
-          <DesignPost post={post} />
+          <GalleryPost post={post} />
         );
       })}
     </div>

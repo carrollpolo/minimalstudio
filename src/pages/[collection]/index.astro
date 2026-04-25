@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 const collection = Astro.url.pathname.split('/')[1];
 
 // 再定义一次（页面运行时才需要）
-const collectionNames = ["writings", "travels", "blog"];
+const collectionNames = ["gallery", "writings", "travels", "blog"];
 
 if (!collectionNames.includes(collection)) {
   throw new Error(`Collection "${collection}" 不存在于 content/config.ts`);
